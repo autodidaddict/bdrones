@@ -1,0 +1,20 @@
+[2018-07-26 10:41:58,590] ERROR {org.ballerinalang.launcher.Main} - null 
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.nextNode(HashMap.java:1442)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:1476)
+	at java.util.HashMap$EntryIterator.next(HashMap.java:1474)
+	at java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1.next(Collections.java:1661)
+	at java.util.Collections$UnmodifiableMap$UnmodifiableEntrySet$1.next(Collections.java:1654)
+	at org.ballerinalang.net.grpc.proto.ServiceProtoBuilder.codeGenerated(ServiceProtoBuilder.java:120)
+	at org.wso2.ballerinalang.compiler.BinaryFileWriter.lambda$writeExecutableBinary$50(BinaryFileWriter.java:122)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.wso2.ballerinalang.compiler.BinaryFileWriter.writeExecutableBinary(BinaryFileWriter.java:121)
+	at org.wso2.ballerinalang.compiler.BinaryFileWriter.writeExecutableBinary(BinaryFileWriter.java:102)
+	at org.wso2.ballerinalang.compiler.BinaryFileWriter.write(BinaryFileWriter.java:86)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.wso2.ballerinalang.compiler.Compiler.write(Compiler.java:105)
+	at org.ballerinalang.packerina.BuilderUtils.compileWithTestsAndWrite(BuilderUtils.java:92)
+	at org.ballerinalang.packerina.cmd.BuildCommand.execute(BuildCommand.java:83)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+ 
