@@ -1,6 +1,8 @@
 import ballerina/grpc;
 import ballerina/log;
+import ballerinax/docker;
 
+@docker:Expose {}
 endpoint grpc:Listener listener {
     host: "localhost",
     port: 9090
@@ -26,6 +28,11 @@ type DroneDetails record {
     float battery_remaining;
 };
 
+@docker:Config {
+    registry: "index.docker.io/kotancode",
+    name:"dronemgmt",
+    tag: "v1.0"
+}
 @grpc:ServiceConfig
 service DroneMgmt bind listener {
 
